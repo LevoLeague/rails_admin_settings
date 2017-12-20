@@ -125,7 +125,7 @@ module RailsAdminSettings
 
     def load_yaml
       require_safe_yaml do
-        YAML.safe_load(raw)
+        SafeYAML.load(raw)
       end
     end
 

@@ -72,7 +72,7 @@ module RailsAdminSettings
         require_safe_yaml do
           unless raw.blank?
             begin
-              YAML.safe_load(raw)
+              SafeYAML.load(raw)
             rescue Psych::SyntaxError => e
               errors.add(:raw, I18n.t('admin.settings.yaml_invalid'))
             end

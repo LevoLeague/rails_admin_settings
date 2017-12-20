@@ -63,7 +63,7 @@ describe 'Settings' do
   it 'should support yaml kind' do
     Settings.tdata(kind: 'yaml')
     Settings.tdata = ['one', 'two', 'three']
-    expect(YAML.safe_load(Settings.get(:tdata).raw)).to eq ['one', 'two', 'three']
+    expect(SafeYAML.load(Settings.get(:tdata).raw)).to eq ['one', 'two', 'three']
     expect(Settings.tdata).to eq ['one', 'two', 'three']
   end
 

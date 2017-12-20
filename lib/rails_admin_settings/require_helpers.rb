@@ -14,7 +14,7 @@ module RailsAdminSettings
 
     def require_safe_yaml
       begin
-        require 'safe_yaml'
+        require 'safe_yaml/load'
         yield
       rescue LoadError => e
         e.message << " [rails_admin_settings] Please add gem 'safe_yaml' to your Gemfile to use yaml settings"

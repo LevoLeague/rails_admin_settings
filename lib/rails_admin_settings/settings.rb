@@ -66,7 +66,7 @@ class Settings < BasicObject
     def apply_defaults!(file, verbose = false)
       if File.file?(file)
         puts "[settings] Loading from #{file}" if verbose
-        yaml = YAML.load(File.read(file), safe: true)
+        yaml = SafeYAML.load(File.read(file))
         yaml.each_pair do |namespace, vals|
           vals.symbolize_keys!
           n = ns(namespace)

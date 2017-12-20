@@ -14,6 +14,7 @@ unless ENV['ACTIVERECORD']
   require 'mongoid'
 end
 
+require 'safe_yaml/load'
 require 'database_cleaner'
 require 'factory_girl'
 require 'mongoid-rspec'
